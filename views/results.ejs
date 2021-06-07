@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style/font.css" />
+    <link rel="stylesheet" href="/style/boot.css" />
+    <title>Match Result</title>
+    <link rel="stylesheet" href="/style/results.css" />
+  </head>
+  <body>
+    <div
+      class="sticky-top"
+      style="position: fixed; float: right; margin-top: 10px"
+    >
+      <a href="/users/index" class="btn btn-primary">Add Scores</a>
+      <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+      <a href="/users/history" class="btn btn-primary">View Match History</a>
+      <a href="/users/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <div class="container">
+      <h1 class="mt-5 mx-5">Match Result:</h1>
+      <h2 id="match-between"></h2>
+      <h2 id="main-result"></h2>
+    </div>
+    <script src="/js/results.js"></script>
+  </body>
+</html>

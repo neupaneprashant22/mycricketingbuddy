@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cricket Scorer-First Innings</title>
+  <link rel="stylesheet" href="/style/style.css" />
+</head>
+<body>
+  <div>
+    <center><h1>Cricket Scorer</h1></center>
+    <h2 id="match-of"></h2>
+    <p id="toss"></p>
+  </div>
+  <div>
+    <h3>First Innings</h3>
+    <table class="first-innings-table-batsman">
+      <header id="bat-first"></header>
+      <tr>
+        <th>S.N</th>
+        <th>Batsman Name</th>
+        <th>Runs scored</th>
+        <th>Balls faced</th>
+        <th>Strike rate</th>
+        <th>Status</th>
+      </tr>
+    </table>
+    <table class="first-innings-total">
+      <tr>
+        <td id="total-runs">Total runs:</td>
+        <td id="total-overs">Overs:</td>
+        <td id="total-runrate">Run rate:</td>
+      </tr>
+    </table>
+    <table class="first-innings-table-bowler">
+      <tr>
+        <th>S.N</th>
+        <th>Bowler Name</th>
+        <th>Wickets</th>
+        <th>Maiden</th>
+        <th>Overs</th>
+        <th>Economy</th>
+      </tr>
+    </table>
+  </div>
+  <div class="startsecond-div" id="startsecond-div">
+    <h5 id="startsecond-h5">Target:</h5>
+    <button
+      type="submit"
+      name="startsecond-btn"
+      class="startsecond-btn"
+      id="startsecond-btn"
+      action="secondinnings"
+      method="POST"
+    >
+      Start Second Innings
+    </button>
+  </div>
+</body>
+<div class="footer">
+  <h2 class="whath1">What happened???</h2>
+  <div class="whathappened">
+    <button id="norun" class="button" type="button">No run</button>
+    <button id="onerun" class="button" type="button">1</button>
+    <button id="tworuns" class="button" type="button">2</button>
+    <button id="threeruns" class="button" type="button">3</button>
+    <button id="fourruns" class="button" type="button">4</button>
+    <button id="fiveruns" class="button" type="button">5</button>
+    <button id="sixruns" class="button" type="button">6</button>
+    <button id="wide" class="button" type="button">Wide</button>
+    <button id="noball" class="button" type="button">No Ball</button>
+    <button id="wicket" class="button" type="button">Wicket</button>
+  </div>
+</div>
+<script src="/js/firstinnings.js"></script>

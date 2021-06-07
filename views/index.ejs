@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Cricket Scorer input
+    </title>
+    <link rel="stylesheet" href="/style/startingpage.css">
+</head>
+    <body>
+        <center><h1>Fill up the basic Details</h1></center>
+        <form id="starting-form" action="firstinnings" method="POST">
+           Team 1: <input type="text" name="team1" id="team1" placeholder="Enter the name of team-1" required><br>
+           Team 2: <input type="text" name="team2" id="team2" placeholder="Enter the name of team-2" required><br>
+           Overs:<input type="number" name="overs" id="overs" min="1" max="50" placeholder="Total overs to be played in an innings" required><br>
+           Wickets:<input type="number" name="wickets" id="wickets" min="1" max="10" placeholder="Total wickets to be played in an innings" required><br>
+           <label>Toss</label><select name='toss' id="toss-won">
+               <option value='team1'>Team1</option> 
+               <option  value='team2'>Team2</option>
+               </select><br>
+            Decided to:<select name='decided' id="decided-to">
+                <option  value='bat'>Bat</option>
+                <option  value='bowl'>Bowl</option>
+            </select>
+            <center><button type="submit" id="submit-btn" class="button">Sumbit</button></center>
+        </form>
+        <script src="/js/startingscript.js"></script>
+    </body>
+</head>

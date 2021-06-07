@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style/font.css" />
+    <link rel="stylesheet" href="/style/boot.css" />
+    <link rel="stylesheet" href="/style/bootstrap.css" />
+    <link rel="stylesheet" href="/style/bootstrap.min.css" />
+    <link rel="stylesheet" href="/style/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="/style/bootstrap-reboot.min.css" />
+    <title>Match History</title>
+  </head>
+  <body>
+    <div class="sticky-top" style="position: fixed; float: right; margin-top: 10px;">
+      <a href="/users/index" class="btn btn-primary">Add Scores</a>
+      <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+      <a href="/users/logout" class="btn btn-secondary">Logout</a>
+      </div>
+    <div class="container">
+      <center><h1 class="mt-5">My Matches</h1></center>
+       <%if(results.length==0){%>
+      <p>No Data found</p>
+      <%}else{ %>
+      <table head="Match History" class="table table-dark table-hover">
+        <tr>
+          <th>Team 1 </th>
+          <th>Team 2 </th>
+          <th>Toss</th>
+          <th>Decided to</th>
+          <th>Winner</th>
+          <th>Won by</th>
+        </tr>
+        <% results.forEach(function(data){%>
+        <tr>
+          <td><%=data.team1%></td>
+          <td><%=data.team2%></td>
+          <%if(data.toss=='team1'){%>
+          <td><%=data.team1%></td>
+          <%}else{ %>
+          <td><%=data.team2%></td>
+          <%}%>
+          <td><%=data.decided%></td>
+          <%if(data.winner==0){%>
+          <td>Match Drawn</td>
+            <%} else if((data.toss=='team1')&&(data.decided=='bat')&&(data.winner==1)){%>
+           
+            <td><%=data.team1%></td>
+            <%}else if((data.toss=='team1')&&(data.decided=='bowl')&&(data.winner==1)){%>
+      
+            <td><%=data.team2%></td>
+            <%}else if(((data.toss=='team2')&&(data.decided=='bat')&&(data.winner==1))){%>
+            
+            <td><%=data.team2%></td>
+            <%}else if(((data.toss=='team2')&&(data.decided=='bowl')&&(data.winner==1))){%>
+              
+            <td><%=data.team1%></td>
+
+
+            <%} else if((data.toss=='team1')&&(data.decided=='bat')&&(data.winner==2)){%>
+              <td><%=data.team2%></td>
+              <%}else if((data.toss=='team1')&&(data.decided=='bowl')&&(data.winner==2)){%>
+              <td><%=data.team1%></td>
+              <%}else if(((data.toss=='team2')&&(data.decided=='bat')&&(data.winner==2))){%>
+              <td><%=data.team1%></td>
+              <%}else if(((data.toss=='team2')&&(data.decided=='bowl')&&(data.winner==2))){%>
+              <td><%=data.team2%></td>
+            <%}%> 
+
+            <%if(data.winner==0){%>
+              <td>-</td>
+              <%}else if(data.runs_remaning < 0 ){%>
+              <td>
+                won by <%=data.wickets_remaning%> wickets with
+                <%=data.balls_remaning%> balls remaning
+              </td>
+              <%}else{ %>
+              <td>won by <%=data.runs_remaning%> runs.</td>
+              <%}%>
+    
+
+          
+        </tr>
+          <% }) %>
+        </tr>
+      </table>
+
+      <%}%>
+      
+    </div>
+    <script src="/js/slimmin.js"></script>
+    <script src="/js/propermin.js"></script>
+    <script src="/js/bootstrapmin.js"></script>
+  </body>
+</html>
